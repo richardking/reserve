@@ -1,0 +1,5 @@
+check_times:
+  cron: "* * * * *"
+  class: CheckTime
+  queue: availability
+  description: "test"

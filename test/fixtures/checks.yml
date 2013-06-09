@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  url: MyString
+  email: MyString
+  start_time: 2013-06-08 17:41:42
+  end_time: 2013-06-08 17:41:42
+  enabled: false
+
+two:
+  url: MyString
+  email: MyString
+  start_time: 2013-06-08 17:41:42
+  end_time: 2013-06-08 17:41:42
+  enabled: false
