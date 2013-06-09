@@ -5,7 +5,7 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'pg'
 gem 'haml-rails'
 gem 'resque', "~> 1.24.1"
 gem 'redis', "~> 3.0.4"
