@@ -5,7 +5,7 @@ class CheckTime
     Check.all.each do |check|
       record = Check.find(check.id)
       if times = record.check_time
-        UserMailer.availability_email(check_id, times)
+        UserMailer.availability_email(check.id, times).deliver!
       end
     end
   end
