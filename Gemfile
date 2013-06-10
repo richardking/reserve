@@ -6,6 +6,8 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+
+# gem 'sqlite3'
 gem 'haml-rails'
 gem 'resque', "~> 1.24.1"
 gem 'redis', "~> 3.0.4"

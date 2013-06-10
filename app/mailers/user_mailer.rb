@@ -5,6 +5,6 @@ class UserMailer < ActionMailer::Base
     check = Check.find(check_id)
     @times = times
     @url = check.url
-    mail(:to => check.email, :subject => "Availability")
+    mail(:to => check.email, :subject => "#{check.name} #{times.first.to_date}")
   end
 end
