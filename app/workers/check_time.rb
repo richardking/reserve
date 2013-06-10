@@ -3,8 +3,8 @@ class CheckTime
 
   def self.perform
     Check.all.each do |check|
-      record = Check.find(check.id)
-      if times = record.check_time
+      times = Check.find(check.id).check_time
+      if times.present?
         UserMailer.availability_email(check.id, times).deliver!
       end
     end
