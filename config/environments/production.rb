@@ -69,8 +69,8 @@ Reserve::Application.configure do
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'gmail.com',
-    :user_name            => 'rkingucla',
-    :password             => 'rk5184',
+    :user_name            => 'rkdevacct',
+    :password             => 'development1',
     :authentication       => 'plain',
     :enable_starttls_auto => true  }
 end
