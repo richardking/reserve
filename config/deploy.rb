@@ -51,7 +51,7 @@ namespace :deploy do
   before "deploy", "deploy:check_revision"
 end
 
-namespace: resque do
+namespace :resque do
   task :stop_workers do
     run "cd #{current_path} && RAILS_ENV=production bundle exec rake resque:stop_workers"
   end
