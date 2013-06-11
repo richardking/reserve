@@ -36,5 +36,6 @@ namespace :resque do
     else
       pid = File.read(pidfile).to_i
       system("kill -QUIT #{pid}")
+    end
   end
 end
