@@ -16,6 +16,7 @@ default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
+after "deploy", "resque:stop_workers"
 
 namespace :deploy do
   %w[start stop restart].each do |command|
@@ -50,3 +51,8 @@ namespace :deploy do
   before "deploy", "deploy:check_revision"
 end
 
+namespace: resque do
+  task :stop_workers do
+    run "cd #{current_path} && RAILS_ENV=production bundle exec rake resque:stop_workers"
+  end
+end
