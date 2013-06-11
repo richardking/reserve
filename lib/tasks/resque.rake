@@ -25,4 +25,16 @@ namespace :resque do
     end
 
   end 
+
+  desc "stop scheduler"
+  task :stop_scheduler => :environment do
+    puts "temp holder"
+    pidfile = "/service/scheduler/supervise/pid"
+
+    if !File.exists?(pidfile)
+      puts "Scheduler not running"
+    else
+      pid = File.read(pidfile).to_i
+      system("kill -QUIT #{pid}")
+  end
 end
