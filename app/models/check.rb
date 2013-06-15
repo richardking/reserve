@@ -1,7 +1,7 @@
 require 'open-uri'
 
 class Check < ActiveRecord::Base
-  attr_accessible :email, :enabled, :end_time, :start_time, :url
+  attr_accessible :email, :enabled, :end_time, :start_time, :url, :name
 
   def check_time
     parsed = Nokogiri::HTML(open(url))
@@ -12,5 +12,13 @@ class Check < ActiveRecord::Base
     else
       return []
     end
+  end
+
+  def enable
+    update_attribute(:enabled, true)
+  end
+
+  def disable
+    update_attribute(:enabled, false)
   end
 end
