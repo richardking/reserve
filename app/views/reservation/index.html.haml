@@ -1,6 +1,8 @@
 %h1 test
-%ul
-  - @checks.each do |check|
+- @checks.each do |check|
+  %ul
+    %li
+      %strong= check.name
     %li= check.url
     %li= check.email
     %li= check.start_time
