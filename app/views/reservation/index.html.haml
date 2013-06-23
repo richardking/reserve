@@ -1,21 +1,26 @@
-%h1 test
-= form_for @check do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.label :url
-  = f.text_field :url
-  = f.label :email
-  = f.text_field :email
-  = f.label :start_time
-  = f.datetime_select :start_time, :ampm => true, :minute_step => 15
-  = f.label :end_time
-  = f.datetime_select :end_time, :ampm => true, :minute_step => 15
-  = f.submit
-- @checks.each do |check|
-  %ul
-    %li
-      %strong= check.name
-    %li= check.url
-    %li= check.email
-    %li= check.start_time.in_time_zone("Pacific Time (US & Canada)")
-    %li= check.end_time.in_time_zone("Pacific Time (US & Canada)")
+%body
+  .navbar.navbar-inverse.navbar-fixed-top
+    .navbar-inner
+      .container
+        .brand open table finder
+  .container
+    = form_for @check do |f|
+      = f.label :name_of_restaurant
+      = f.text_field :name
+      = f.label :url
+      = f.text_field :url
+      = f.label :email
+      = f.text_field :email
+      = f.label :start_time
+      = f.datetime_select :start_time, :ampm => true, :minute_step => 15
+      = f.label :end_time
+      = f.datetime_select :end_time, :ampm => true, :minute_step => 15
+      = f.submit
+    - @checks.each do |check|
+      %ul
+        %li
+          %strong= check.name
+        %li= check.url
+        %li= check.email
+        %li= check.start_time.in_time_zone("Pacific Time (US & Canada)")
+        %li= check.end_time.in_time_zone("Pacific Time (US & Canada)")
