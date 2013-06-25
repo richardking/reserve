@@ -6,7 +6,7 @@ class ChecksController < ApplicationController
 
   def destroy
     Check.find(params[:id]).destroy
-    redirect_to :root, info: "Succesfully deleted"
+    redirect_to :root, notice: "Succesfully deleted"
   end
 
 end
