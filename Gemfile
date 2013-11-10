@@ -5,7 +5,9 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+# gem 'pg'
+gem 'mysql2'
+gem 'activerecord-mysql2-adapter'
 
 # gem 'sqlite3'
 gem 'haml-rails'
@@ -15,6 +17,8 @@ gem 'resque-scheduler', "~> 2.0.1", :require => 'resque_scheduler'
 
 gem 'json'
 gem 'nokogiri'
+
+gem 'rvm-capistrano'
 
 # Gems used only for assets and not required
 # in production environments by default.

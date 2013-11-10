@@ -22,6 +22,8 @@ GEM
       activesupport (= 3.2.6)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-mysql2-adapter (0.0.3)
+      mysql2
     activeresource (3.2.6)
       activemodel (= 3.2.6)
       activesupport (= 3.2.6)
@@ -77,6 +79,7 @@ GEM
     mini_portile (0.5.0)
     mono_logger (1.1.0)
     multi_json (1.7.6)
+    mysql2 (0.3.14)
     net-scp (1.1.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -86,7 +89,6 @@ GEM
       net-ssh (>= 2.6.5)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
-    pg (0.15.1)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -132,6 +134,8 @@ GEM
       rufus-scheduler
     rufus-scheduler (2.0.19)
       tzinfo (>= 0.3.23)
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -173,18 +177,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-mysql2-adapter
   capistrano
   coffee-rails (~> 3.2.1)
   haml-rails
   jquery-rails
   json
   less-rails
+  mysql2
   nokogiri
-  pg
   rails (= 3.2.6)
   redis (~> 3.0.4)
   resque (~> 1.24.1)
   resque-scheduler (~> 2.0.1)
+  rvm-capistrano
   sass-rails (~> 3.2.3)
   therubyracer
   twitter-bootstrap-rails

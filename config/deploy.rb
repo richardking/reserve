@@ -1,16 +1,18 @@
+require "rvm/capistrano"
 require "bundler/capistrano"
 
-server "173.230.152.240", :web, :app, :db, primary: true
+server "192.241.220.224", :web, :app, :db, primary: true
 
 set :application, "reserve"
 set :user, "deploy"
 set :deploy_to, "/home/#{user}/apps/#{application}"
 set :deploy_via, :remote_cache
 set :use_sudo, false
+set :rvm_type, :system
 
 set :scm, "git"
 set :repository, "git@github.com:richardking/#{application}.git"
-set :branch, "master"
+set :branch, "docean"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
