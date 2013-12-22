@@ -22,7 +22,7 @@
         %li
           %strong= check.name
         %li= check.url
-        %li= check.email
+        %li= "#{check.email[0..5]}..."
         %li= check.start_time.in_time_zone("Pacific Time (US & Canada)")
         %li= check.end_time.in_time_zone("Pacific Time (US & Canada)")
         %li= link_to "Delete", check_path(check.id), method: :delete
