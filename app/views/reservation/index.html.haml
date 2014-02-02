@@ -17,6 +17,8 @@
       = f.label :end_time
       = f.datetime_select :end_time, :ampm => true, :minute_step => 15
       = f.submit
+    %small.muted
+      = @resque_canary ? "Checks are currently running" : "Checks are down"
     - @checks.each do |check|
       %ul
         %li

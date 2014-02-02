@@ -4,6 +4,12 @@ check_times:
   queue: availability
   description: "test"
 
+resque_canary:
+  cron: "0 * * * *"
+  class: ResqueCanary
+  queue: availability
+  description: "make sure resque and redis are running properly"
+
 clear_old_times:
   cron: "0 0 * * *"
   class: ClearOldTimes
