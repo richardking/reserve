@@ -12,7 +12,7 @@ set :rvm_type, :system
 
 set :scm, "git"
 set :repository, "git@github.com:richardking/#{application}.git"
-set :branch, "docean"
+set :branch, "master"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
