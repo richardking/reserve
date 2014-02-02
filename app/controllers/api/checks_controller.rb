@@ -3,6 +3,10 @@ class Api::ChecksController < ApplicationController
   respond_to :json
   before_filter :restrict_access
 
+  def index
+    render :json => { :success_index => true }
+  end
+
   def create
     puts params.inspect
     puts "x"
