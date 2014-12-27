@@ -34,6 +34,7 @@ class Check < ActiveRecord::Base
 
   def find_time(parsed)
     # parsed.css('ul.ResultTimes li').map { |v| Time.zone.strptime(v.to_s.match(/(\d*\/.*[A|P]M)\'\,/)[1], "%m/%d/%Y %I:%M:%S %p") rescue nil}.compact
-    parsed.css('ul.dtp-results-times li').map { |v| Time.zone.strptime(v.to_s.match(/(\d{1,2}:\d*.[A|P]M)/)[1], "%I:%M %p") rescue nil}.compact
+    # parsed.css('ul.dtp-results-times li').map { |v| Time.zone.strptime(v.to_s.match(/(\d{1,2}:\d*.[A|P]M)/)[1], "%I:%M %p") rescue nil}.compact
+    parsed.css('ul.dtp-results-times li').map { |v| Time.zone.strptime(v.to_s.match(/data-datetime="(20.* \d{1,2}:\d{1,2})"/)[1],"%Y-%m-%d %H:%M") rescue nil}.compact
   end
 end
