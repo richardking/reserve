@@ -6,14 +6,13 @@ class Check < ActiveRecord::Base
   validates :name, :email, :start_time, :end_time, :url, :presence => true
 
   def check_time
-    parsed = Nokogiri::HTML(open(url))
     times = if Time.zone.now.utc_offset == -25200
               find_time(parsed).map { |t| t - 1.hour }
             else
               find_time(parsed)
             end
     if times.present?
-      times.select! {|t| t >= start_time.in_time_zone("Pacific Time (US & Canada)") && t <= end_time.in_time_zone("Pacific Time (US & Canada)") }
+      times.select {|t| t >= start_time.in_time_zone("Pacific Time (US & Canada)") && t <= end_time.in_time_zone("Pacific Time (US & Canada)") }
     else
       []
     end
@@ -29,7 +28,12 @@ class Check < ActiveRecord::Base
 
   private
 
+  def parsed
+    @parsed ||= Nokogiri::HTML(open(url))
+  end
+
   def find_time(parsed)
-    parsed.css('ul.ResultTimes li').map { |v| Time.zone.strptime(v.to_s.match(/(\d*\/.*[A|P]M)\'\,/)[1], "%m/%d/%Y %I:%M:%S %p") rescue nil}.compact
+    # parsed.css('ul.ResultTimes li').map { |v| Time.zone.strptime(v.to_s.match(/(\d*\/.*[A|P]M)\'\,/)[1], "%m/%d/%Y %I:%M:%S %p") rescue nil}.compact
+    parsed.css('ul.dtp-results-times li').map { |v| Time.zone.strptime(v.to_s.match(/(\d{1,2}:\d*.[A|P]M)/)[1], "%I:%M %p") rescue nil}.compact
   end
 end

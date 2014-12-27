@@ -16,7 +16,7 @@ gem 'redis', "~> 3.0.4"
 gem 'resque-scheduler', "~> 2.0.1", :require => 'resque_scheduler'
 
 gem 'json'
-gem 'nokogiri'
+gem 'nokogiri', "~> 1.6.5"
 
 gem 'rvm-capistrano'
 
