@@ -16,7 +16,7 @@ gem 'redis', "~> 3.0.4"
 gem 'resque-scheduler', "~> 2.0.1", :require => 'resque_scheduler'
 
 gem 'json'
-gem 'nokogiri', "~> 1.6.5"
+gem 'nokogiri'
 
 gem 'rvm-capistrano'
 
@@ -29,7 +29,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', '~> 0.12.1', :platforms => :ruby
   gem 'less-rails'
 
   gem 'uglifier', '>= 1.0.3'
